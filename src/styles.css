@@ -1,0 +1,15 @@
+/* include tailwind */
+@import "tailwindcss";
+
+/* our base styles */
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  color: #333;
+  /* @apply allows us to use tailwind classes */
+  @apply text-slate-800 bg-slate-100;
+}
+
+h1 {
+  @apply mt-4 mb-8 text-2xl text-center text-teal-900;
+}

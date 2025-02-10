@@ -1,0 +1,63 @@
+<div class="my-4 flex items-center gap-4">
+  <span>Global Counter: {{globalCounter}}</span>
+  <button
+    (click)="incrementCounter()" 
+    class="p-1 border-2 border-slate-500 rounded hover:bg-slate-200 cursor-pointer">
+    increment
+  </button>
+</div>
+
+<div class="my-4 flex items-center gap-4">
+  <span>The Array:</span>
+  <pre>[{{array.join(',')}}]</pre>
+</div>
+
+<div class="my-4 flex items-center gap-4">
+  <span>Length [pipe counter]: </span>
+  <span class="inline-flex gap-2">
+    <span class="font-bold">Pure</span>
+    <pre>{{array | length}}</pre>
+  </span>
+  <span class="inline-flex gap-2">
+    <span class="font-bold">Impure</span>
+    <pre>{{array | lengthImpure}}</pre>
+  </span>
+</div>
+
+<div class="my-4 flex items-center gap-4">
+  <button
+    (click)="add()" 
+    class="p-1 border-2 border-slate-500 rounded hover:bg-slate-200 cursor-pointer">
+    add
+  </button>
+  <button
+    (click)="remove()" 
+    class="p-1 border-2 border-slate-500 rounded hover:bg-slate-200 cursor-pointer">
+    remove
+  </button>
+  <button
+    (click)="update()" 
+    class="p-1 border-2 border-slate-500 rounded hover:bg-slate-200 cursor-pointer">
+    update
+  </button>
+  <button
+    (click)="reset()" 
+    class="p-1 border-2 border-slate-500 rounded hover:bg-slate-200 cursor-pointer">
+    reset
+  </button>
+</div>
+
+<div class="my-12">
+  <p class="mb-2 font-bold">NOTE</p>
+  <p class="mb-2">
+    You will notice that NG throws 
+    a "ExpressionChangedAfterItHasBeenCheckedError" (in dev mode), 
+    every time the array is altered or the global counter is change.
+    This is because <code>lengthImpure</code> is incrementing its own 
+    <code>counter</code>, and thus altering the value of <code>lengthImpure</code>.  You can read more about 
+    this error <a href="https://angular.dev/errors/NG0100" target="_blank" class="text-sky-800">here</a>.
+  </p>
+  <p class="mb-2">
+    This is just a demo app so we will ignore the error.
+  </p>
+</div>
