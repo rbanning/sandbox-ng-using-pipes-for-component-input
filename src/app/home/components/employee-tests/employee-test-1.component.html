@@ -1,0 +1,7 @@
+<h1>Employee Test #1</h1>
+<button 
+  (click)="add()"
+  class="py-1 px-2 border rounded-full">
+  + add
+</button>
+<hallpass-person-list [employees]="employees$ | async" (onRemove)="remove($event)"></hallpass-person-list>

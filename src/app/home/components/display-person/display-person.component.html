@@ -1,0 +1,14 @@
+<div class="flex items-center gap-2">
+  <img 
+    [src]="employee.image" 
+    [alt]="employee.name" 
+    width="100" height="100"
+    class="rounded-full overflow-hidden" />
+  <span class="flex-1 flex flex-col">
+    <span class="font-strong">{{employee.name}}</span>
+    <code>{{employee.email}}</code>
+  </span>
+  <button 
+    (click)="remove()"
+    class="border py-1 px-2 rounded-full text-lg flex items-center justify-center">X</button>
+</div>

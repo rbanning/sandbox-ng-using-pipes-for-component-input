@@ -1,0 +1,7 @@
+@if (employees) {
+  <div class="grid gap-4">
+    @for (item of employees; track $index) {
+      <hallpass-display-person [employee]="item" (onRemove)="remove($event)" />
+    }
+  </div>
+}

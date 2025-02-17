@@ -1,2 +1,2 @@
-export * from './length.pipe';
-export * from './length-impure.pipe';
+export * from './take.pipe';
+export * from './take-impure.pipe';
