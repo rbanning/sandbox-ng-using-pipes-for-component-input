@@ -6,7 +6,11 @@
     class="rounded-full overflow-hidden" />
   <span class="flex-1 flex flex-col">
     <span class="font-strong">{{employee.name}}</span>
-    <code>{{employee.email}}</code>
+    <code class="text-sm">{{employee.email}}</code>
+    <div class="flex gap-2 text-sm">
+      <code>({{employee.role}})</code>
+      <span>since {{employee.hired}}</span>
+    </div>
   </span>
   <button 
     (click)="remove()"

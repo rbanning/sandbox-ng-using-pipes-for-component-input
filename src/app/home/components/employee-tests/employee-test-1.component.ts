@@ -4,11 +4,12 @@ import { Observable } from 'rxjs';
 import { IEmployee } from '../../../models/employee.model';
 import { EmployeeService } from '../../../services/employee.service';
 import { PersonListComponent } from "../person-list/person-list.component";
+import { EmployeeStatsComponent } from '../employee=stats/employee-stats.component';
 
 @Component({
   selector: 'hallpass-employee-test-1',
   standalone: true,
-  imports: [CommonModule, PersonListComponent],
+  imports: [CommonModule, PersonListComponent, EmployeeStatsComponent],
   templateUrl: './employee-test-1.component.html',
   styles: ':host { display: block; }'
 })

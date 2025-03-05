@@ -1,7 +1,18 @@
-<h1>Employee Test #1</h1>
-<button 
-  (click)="add()"
-  class="py-1 px-2 border rounded-full">
-  + add
-</button>
-<hallpass-person-list [employees]="employees$ | async" (onRemove)="remove($event)"></hallpass-person-list>
+<ng-container *ngIf="{ employees: employees$ | async } as obs">
+
+  <h1 class="flex items-center gap-8">
+    <span class="flex-1">
+      Employee Test #1
+    </span>
+    <button 
+      (click)="add()"
+      class="py-1 px-2 border rounded-full">
+      + add
+    </button>
+  </h1>
+  <div class="flex gap-8">
+    <hallpass-person-list [employees]="obs.employees" (onRemove)="remove($event)"></hallpass-person-list>
+    <hallpass-employee-stats [employees]="obs.employees"></hallpass-employee-stats>
+  </div>
+  
+</ng-container>
